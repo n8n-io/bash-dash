@@ -42,6 +42,12 @@ Also parameters can be supplied by simply adding them after the command. For exa
 Calling a test webhook is possible by adding as last parameter `--test`. It will then replace `/webhook/` with `/webhook-test/`.
 
 
+## Requests made
+
+The request bash-dash makes are by default POST-requests. Opional call-commands
+that got supplied will be send in the body.
+The server has min. 2 minutes to send a response which then gets printed to the terminal
+
 ## License
 
 Bash-Dash is [**Apache 2.0**](https://github.com/n8n-io/bash-dash-command/blob/main/LICENSE) licensed.
