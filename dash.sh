@@ -4,6 +4,7 @@ declare -A commands
 
 # Define the commands here
 commands[test]="http://localhost:5678/webhook/test"
+commands[test2]="URL:http://localhost:5678/webhook/test|METHOD:POST"
 
 # ----------------------------------
 # ------ NO CHANGES PAST HERE ------
