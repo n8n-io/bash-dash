@@ -1,9 +1,9 @@
 #!/usr/bin/env bash
 
-declare -A COMMANDS
+declare -A commands
 
 # Define the commands here
-COMMANDS[test]="http://localhost:5678/webhook/test"
+commands[test]="http://localhost:5678/webhook/test"
 
 # ----------------------------------
 # ------ NO CHANGES PAST HERE ------
@@ -15,20 +15,20 @@ then
     echo "No command supplied!"
     echo
     echo "The following commands are supported:"
-    for i in "${!COMMANDS[@]}"
+    for i in "${!commands[@]}"
     do
-        echo -e " -  \e[1m$i \e[0m(${COMMANDS[$i]})"
+        echo -e " -  \e[1m$i \e[0m(${commands[$i]})"
     done
     exit 0
 fi
 
-if [ -z "${COMMANDS[$command]}" ]
+if [ -z "${commands[$command]}" ]
 then
     echo "The command \"$command\" is not known!"
     exit 0
 fi
 
-url=${COMMANDS[$command]}
+url=${commands[$command]}
 
 if [ "${@: -1}" == "--test" ]
 then
