@@ -39,5 +39,5 @@ else
     parameter=${*:2}
 fi
 
-curl -d "command=$command&parameter=$parameter" -X POST ${url}
+curl -d "command=$command&parameter=$parameter" -H "user-agent: bash-dash" -X POST ${url}
 echo ""
