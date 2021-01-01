@@ -12,7 +12,13 @@ COMMANDS[test]="http://localhost:5678/webhook/test"
 command=$1
 if [ -z "$command" ]
 then
-    echo "The command is missing!"
+    echo "No command supplied!"
+    echo
+    echo "The following commands are supported:"
+    for i in "${!COMMANDS[@]}"
+    do
+        echo -e " -  \e[1m$i \e[0m(${COMMANDS[$i]})"
+    done
     exit 0
 fi
 
