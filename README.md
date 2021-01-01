@@ -48,6 +48,20 @@ The request bash-dash makes are by default POST-requests. Opional call-commands
 that got supplied will be send in the body.
 The server has min. 2 minutes to send a response which then gets printed to the terminal
 
+## Response formatting
+
+It is possible to use backslash escapes.
+
+The following will for example display the word "green" in the color green.
+
+```bash
+The following text is \033[32mgreen\033[0m
+```
+
+The different codes for colors, bold, underline, ... can be found here:
+https://misc.flogisoft.com/bash/tip_colors_and_formatting
+
+
 ## License
 
 Bash-Dash is [**Apache 2.0**](https://github.com/n8n-io/bash-dash-command/blob/main/LICENSE) licensed.
