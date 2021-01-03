@@ -1,6 +1,7 @@
 # Bash-Dash
 
-(Slash)Dash-Commands for the terminal.
+(Slash)Dash-Commands for the terminal. It got created for [n8n.io](https://n8n.io)
+but can be used with anything that can receive HTTP requests.
 
 ## Install
 
@@ -13,17 +14,6 @@ mkdir ~/.dash-command && curl https://raw.githubusercontent.com/n8n-io/bash-dash
 ```
 
 ## Usage
-### Add commands
-
-Adding new commands is possible by editing the file `~/.dash-command/dash.sh` and adding a new line to the `COMMANDS` array.
-
-For example:
-```bash
-COMMANDS[test]="http://localhost:5678/webhook/test"
-```
-
-Would add the command `test` which calls the URL `http://localhost:5678/webhook/test`.
-
 
 ### Call command
 
@@ -37,18 +27,57 @@ Also parameters can be supplied by simply adding them after the command. For exa
 - weather berlin
 ```
 
+### Add commands
+
+Adding new commands is possible by editing the file `~/.dash-command/dash.sh` and adding a new line to the `commands` array.
+
+#### Simple Format
+
+The simplest way to add a new command is by just adding the URL that should 
+be called. It will then by default make a GET request to that URL.
+
+For example:
+```bash
+commands[test]="http://localhost:5678/webhook/test"
+```
+
+Would add the command `test` which calls the URL `http://localhost:5678/webhook/test`.
+
+#### Advanced Format
+
+For more control the advanced format can be used. There it is possible to to defined the following:
+
+ - METHOD[optional]: The HTTP Request-Method (default: GET)
+ - TEST-URL[optional]: The Test-URL to use (default: as described under "Call a test Webhook")
+ - URL[required]: The URL the bash-command should call
+
+For example:
+```bash
+commands[test]="URL:http://localhost:5678/webhook/test|METHOD:GET|TEST-URL:http://localhost:5678/webhook-test/test"
+```
+
 ### Call a test Webhook
 
-Calling a test webhook is possible by adding as last parameter `--test`. It will then replace `/webhook/` with `/webhook-test/`.
+Calling a test webhook is possible by adding as last parameter `--test`. It will then
+call the URL that got defined as `TEST-URL` or if none got defined it replaces 
+`/webhook/` with `/webhook-test/` on the URL.
+
+## Examples
+
+```bash
+- sms wife Will be home late
+- weather berlin
+- serverStats production1 
+```
 
 
-## Requests made
+### Requests made
 
-The request bash-dash makes are by default POST-requests. Opional call-commands
-that got supplied will be send in the body.
-The server has min. 2 minutes to send a response which then gets printed to the terminal
+The request bash-dash makes are by default GET-requests. Optional call-commands
+that got supplied will be send as query parameter.
+The server has min. 2 minutes to send a response which then gets printed to the terminal.
 
-## Response formatting
+### Response formatting
 
 It is possible to use backslash escapes.
 
