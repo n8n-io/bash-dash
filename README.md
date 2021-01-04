@@ -10,7 +10,7 @@ For Bash-Dash to work curl has to be installed.
 To install run:
 
 ```bash
-mkdir ~/.dash-command && curl https://raw.githubusercontent.com/n8n-io/bash-dash-command/main/dash.sh -o ~/.dash-command/dash.sh && echo "alias -- -=~/.dash-command/dash.sh" >> ~/.bashrc
+mkdir ~/.bash-dash && curl https://raw.githubusercontent.com/n8n-io/bash-dash/main/bash-dash.sh -o ~/.bash-dash/bash-dash.sh && curl https://raw.githubusercontent.com/n8n-io/bash-dash/main/commands.sh -o ~/.bash-dash/commands.sh && echo "alias -- -=~/.bash-dash/bash-dash.sh" >> ~/.bashrc
 ```
 
 ## Usage
@@ -29,7 +29,7 @@ Also parameters can be supplied by simply adding them after the command. For exa
 
 ### Add commands
 
-Adding new commands is possible by editing the file `~/.dash-command/dash.sh` and adding a new line to the `commands` array.
+Adding new commands is possible by editing the file `~/.bash-dash/commands.sh` and adding a new line to the `commands` array.
 
 #### Simple Format
 
@@ -91,6 +91,14 @@ The different codes for colors, bold, underline, ... can be found here:
 https://misc.flogisoft.com/bash/tip_colors_and_formatting
 
 
+## Backend
+
+Anything that can receive HTTP request calls can be used with bash-dash. 
+
+loading icon???
+
+
+
 ## License
 
-Bash-Dash is [**Apache 2.0**](https://github.com/n8n-io/bash-dash-command/blob/main/LICENSE) licensed.
+Bash-Dash is [**Apache 2.0**](https://github.com/n8n-io/bash-dash/blob/main/LICENSE) licensed.

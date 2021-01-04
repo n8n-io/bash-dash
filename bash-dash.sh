@@ -1,15 +1,9 @@
 #!/usr/bin/env bash
 
-declare -A commands
+# Load the available commands from external file 
+source commands.sh
 
-# Define the commands here
-commands[test]="http://localhost:5678/webhook/test"
-commands[test2]="URL:http://localhost:5678/webhook/test|METHOD:POST|TEST-URL:http://localhost:5678/webhook-test/test"
-
-# ----------------------------------
-# ------ NO CHANGES PAST HERE ------
-# ----------------------------------
-
+# If no command got supplied list the available ones
 command=$1
 if [ -z "$command" ]
 then
@@ -23,6 +17,14 @@ then
     exit 0
 fi
 
+# Update bash-dash
+if [ "$command" = "--update" ]
+then
+    echo "Updating dash-bash!"
+    curl https://raw.githubusercontent.com/n8n-io/bash-dash/main/bash-dash.sh -o ~/.bash-dash/bash-dash.sh
+    echo "Updating dash-bash!"
+fi
+
 if [ -z "${commands[$command]}" ]
 then
     echo "The command \"$command\" is not known!"
@@ -33,7 +35,7 @@ method=GET
 data=${commands[$command]}
 
 if [[ $data = *"|"* ]]; then
-    # 
+    # Command got defined via advanced format
     IFS='|' read -r -a array <<< "$data"
 
     for element in "${array[@]}"
@@ -52,6 +54,7 @@ if [[ $data = *"|"* ]]; then
         exit 0
     fi
 else
+    # Command got defined via simple format
     url=$data
 fi
 
