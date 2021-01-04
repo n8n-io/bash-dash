@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 
 # Load the available commands from external file 
-source commands.sh
+source ~/.bash-dash/commands.sh
 
 # If no command got supplied list the available ones
 command=$1

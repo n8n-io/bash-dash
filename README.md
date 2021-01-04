@@ -10,7 +10,7 @@ For Bash-Dash to work curl has to be installed.
 To install run:
 
 ```bash
-mkdir ~/.bash-dash && curl https://raw.githubusercontent.com/n8n-io/bash-dash/main/bash-dash.sh -o ~/.bash-dash/bash-dash.sh && curl https://raw.githubusercontent.com/n8n-io/bash-dash/main/commands.sh -o ~/.bash-dash/commands.sh && echo "alias -- -=~/.bash-dash/bash-dash.sh" >> ~/.bashrc
+mkdir ~/.bash-dash && curl https://raw.githubusercontent.com/n8n-io/bash-dash/main/bash-dash.sh -o ~/.bash-dash/bash-dash.sh && chmod 711 ~/.bash-dash/bash-dash.sh && curl https://raw.githubusercontent.com/n8n-io/bash-dash/main/commands.sh -o ~/.bash-dash/commands.sh && echo "alias -- -=~/.bash-dash/bash-dash.sh" >> ~/.bashrc
 ```
 
 ## Usage
