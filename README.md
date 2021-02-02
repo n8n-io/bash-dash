@@ -1,6 +1,6 @@
 # Bash-Dash
 
-Dash commands for the terminal. This was created for [n8n.io](https://n8n.io) but can be used with anything that can receive HTTP requests.
+(Slash) Dash commands for the terminal. This was created for [n8n.io](https://n8n.io) but can be used with anything that can receive HTTP requests.
 
 ## Install
 
