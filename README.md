@@ -1,13 +1,12 @@
 # Bash-Dash
 
-(Slash)Dash-Commands for the terminal. It got created for [n8n.io](https://n8n.io)
-but can be used with anything that can receive HTTP requests.
+(Slash) Dash commands for the terminal. This was created for [n8n.io](https://n8n.io) but can be used with anything that can receive HTTP requests.
 
 ## Install
 
-For Bash-Dash to work curl has to be installed.
+For Bash-Dash to work, [curl](https://curl.se/) has to be installed.
 
-To install run:
+To install, run:
 
 ```bash
 mkdir ~/.bash-dash && curl https://raw.githubusercontent.com/n8n-io/bash-dash/main/bash-dash.sh -o ~/.bash-dash/bash-dash.sh && chmod 711 ~/.bash-dash/bash-dash.sh && curl https://raw.githubusercontent.com/n8n-io/bash-dash/main/commands.sh -o ~/.bash-dash/commands.sh && echo "alias -- -=~/.bash-dash/bash-dash.sh" >> ~/.bashrc
@@ -17,39 +16,40 @@ mkdir ~/.bash-dash && curl https://raw.githubusercontent.com/n8n-io/bash-dash/ma
 
 ### Call command
 
-A command can be called by a dash `-` followed by the command. For example the `weather` command:
+A command can be called by a dash `-` followed by the command. For example, the `weather` command:
+
 ```bash
 - weather
 ```
 
-Also parameters can be supplied by simply adding them after the command. For example:
+Moreover, parameters can be supplied by adding them after the command. For example:
+
 ```bash
 - weather berlin
 ```
 
+![Bash-Dash getting weather information from the terminal](https://i.imgur.com/1kzrNFl.png)
 ### Add commands
 
-Adding new commands is possible by editing the file `~/.bash-dash/commands.sh` and adding a new line to the `commands` array.
+You can add new commands by editing the file `~/.bash-dash/commands.sh` and adding a new line to the `commands` array.
 
 #### Simple Format
 
-The simplest way to add a new command is by just adding the URL that should 
-be called. It will then by default make a GET request to that URL.
+You can add a new command by adding the URL that should 
+be called when the command is issued. It will then make a GET request (by default) to that URL.
 
-For example:
+For example, the following line would add the command `test` which calls the URL `http://localhost:5678/webhook/test`.
 ```bash
 commands[test]="http://localhost:5678/webhook/test"
 ```
 
-Would add the command `test` which calls the URL `http://localhost:5678/webhook/test`.
-
 #### Advanced Format
 
-For more control the advanced format can be used. There it is possible to to defined the following:
+For more control, the advanced format can be used. It is possible to define the following:
 
  - METHOD[optional]: The HTTP Request-Method (default: GET)
  - TEST-URL[optional]: The Test-URL to use (default: as described under "Call a test Webhook")
- - URL[required]: The URL the bash-command should call
+ - URL[required]: The URL that the bash-command should call
 
 For example:
 ```bash
@@ -58,9 +58,7 @@ commands[test]="URL:http://localhost:5678/webhook/test|METHOD:GET|TEST-URL:http:
 
 ### Call a test Webhook
 
-Calling a test webhook is possible by adding as last parameter `--test`. It will then
-call the URL that got defined as `TEST-URL` or if none got defined it replaces 
-`/webhook/` with `/webhook-test/` on the URL.
+Calling a test webhook is possible by adding `--test` as the last parameter. It will then call the URL that was defined as `TEST-URL`. If a test webhook wasn't defined, it replaces `/webhook/` with `/webhook-test/` in the URL.
 
 ## Examples
 
@@ -71,23 +69,23 @@ call the URL that got defined as `TEST-URL` or if none got defined it replaces
 ```
 
 
-### Requests made
+### Requests
 
-The request bash-dash makes are by default GET-requests. Optional call-commands
-that got supplied will be send as query parameter.
-The server has min. 2 minutes to send a response which then gets printed to the terminal.
+The requests that bash-dash makes are by default GET-requests. Optional call-commands
+that are supplied will be sent as query parameters.
+The server has min. 2 minutes to send a response which then gets printed in the terminal.
 
 ### Response formatting
 
 It is possible to use backslash escapes.
 
-The following will for example display the word "green" in the color green.
+The following example will display the word "green" in green color.
 
 ```bash
 The following text is \033[32mgreen\033[0m
 ```
 
-The different codes for colors, bold, underline, ... can be found here:
+The different codes for colors, bold, underline, and so on can be found here:
 https://misc.flogisoft.com/bash/tip_colors_and_formatting
 
 
@@ -96,7 +94,6 @@ https://misc.flogisoft.com/bash/tip_colors_and_formatting
 Anything that can receive HTTP request calls can be used with bash-dash. 
 
 loading icon???
-
 
 
 ## License
