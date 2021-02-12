@@ -1,4 +1,4 @@
-# Bash-Dash
+# Bash-Dash (Beta)
 
 (Slash) Dash commands for the terminal. This was created for [n8n.io](https://n8n.io) but can be used with anything that can receive HTTP requests.
 
@@ -68,7 +68,6 @@ Calling a test webhook is possible by adding `--test` as the last parameter. It 
 - serverStats production1 
 ```
 
-
 ### Requests
 
 The requests that bash-dash makes are by default GET-requests. Optional call-commands
@@ -92,9 +91,6 @@ https://misc.flogisoft.com/bash/tip_colors_and_formatting
 ## Backend
 
 Anything that can receive HTTP request calls can be used with bash-dash. 
-
-loading icon???
-
 
 ## License
 
