@@ -14,17 +14,19 @@ mkdir ~/.bash-dash && curl https://raw.githubusercontent.com/n8n-io/bash-dash/ma
 
 ## Usage
 
-Bash-Dash comes with several commands, but you can also add your own commands.
+After installing Bash-Dash, you can test it and add your own custom commands.
 
 ### Call commands
 
-Call commands are commands that A command can be called by a dash `-` followed by the command. For example, the `weather` command is invoked like this:
+To call a Bash-Dash command, type a dash `-` followed by the command you want. 
+
+For example, a `weather` command is invoked like this:
 
 ```bash
 - weather
 ```
 
-Moreover, you can supply additional parameters by typing them after the command. For example, to get the weather in Berlin, run:
+You can supply additional parameters by typing them after the command. For example, to get the weather in Berlin, run:
 
 ```bash
 - weather berlin
@@ -34,42 +36,59 @@ The output looks like this:
 ![Bash-Dash getting weather information from the terminal](https://i.imgur.com/1kzrNFl.png)
 
 
-To update Bash-Dash, run:
+Bash-Dash comes only with a pre-specified test command. You can try it out by running:
+
+```bash
+- test
+```
+
+
+### Custom commands
+
+You can create custom Bash-Dash commands for your personal use-cases. 
+To do this, open the file `~/.bash-dash/commands.sh` and add a new line to the `commands` array. 
+There are two possible formats in which you can add new commands, depending on how specific you need them to be: simple format and advanced format.
+
+#### Simple Format
+
+Add a new command by specifying the name of your custom command and the URL that should be called when the command is issued. The command will then make a GET request (by default) to that URL. Custom commands in simple format look like this:
+
+```bash
+commands[command_name]="YOUR_URL"
+```
+
+For example, to add the `weather` command, type:
+
+```bash
+commands[weather]="URL?"
+```
+
+#### Advanced Format
+
+If you want more control over your custom commands, use the advanced format, which allows you to specify three parameters:
+
+ - URL[required]: The URL that the bash-command should call
+ - METHOD[optional]: The HTTP Request-Method (default: GET)
+ - TEST-URL[optional]: The Test-URL to use (default: as described under "Call a test Webhook")
+
+For example, to add the `test` command, type:
+```bash
+commands[test]="URL:http://localhost:5678/webhook/test|METHOD:GET|TEST-URL:http://localhost:5678/webhook-test/test"
+```
+
+
+### Update command
+We are continuously improving the Bash-Dash. To update to the latest version, run:
 
 ```
 - --update
 ```
 
-### Custom commands
-
-You can add new custom commands for Bash-Dash. To do this, open the file `~/.bash-dash/commands.sh` and add a new line to the `commands` array. There are two ways to do 
-
-#### Simple Format
-
-You can add a new command by adding the URL that should 
-be called when the command is issued. It will then make a GET request (by default) to that URL.
-
-For example, the following line would add the command `test` which calls the URL `http://localhost:5678/webhook/test`.
-```bash
-commands[test]="http://localhost:5678/webhook/test"
-```
-
-#### Advanced Format
-
-For more control, the advanced format can be used. It is possible to define the following:
-
- - METHOD[optional]: The HTTP Request-Method (default: GET)
- - TEST-URL[optional]: The Test-URL to use (default: as described under "Call a test Webhook")
- - URL[required]: The URL that the bash-command should call
-
-For example:
-```bash
-commands[test]="URL:http://localhost:5678/webhook/test|METHOD:GET|TEST-URL:http://localhost:5678/webhook-test/test"
-```
 
 ### Call a test Webhook
 
 Calling a test webhook is possible by adding `--test` as the last parameter. It will then call the URL that was defined as `TEST-URL`. If a test webhook wasn't defined, it replaces `/webhook/` with `/webhook-test/` in the URL.
+
 
 ## Examples
 
