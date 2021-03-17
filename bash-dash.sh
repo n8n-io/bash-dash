@@ -20,8 +20,15 @@ fi
 # Update bash-dash
 if [ "$command" = "--update" ]
 then
-	echo "Updating dash-bash!"
-	curl https://raw.githubusercontent.com/n8n-io/bash-dash/main/bash-dash.sh -o ~/.bash-dash/bash-dash.sh
+	echo "Updating bash-dash!"
+	{
+		curl --fail --silent --show-error --output ~/.bash-dash/bash-dash.sh https://raw.githubusercontent.com/n8n-io/bash-dash/main/bash-dash.sh
+	} || {
+		echo "Update did fail!"
+	exit 0
+	}
+	echo "Success!"
+	exit 0
 fi
 
 if [ -z "${commands[$command]}" ]
