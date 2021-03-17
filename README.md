@@ -14,6 +14,13 @@ mkdir ~/.bash-dash && curl https://raw.githubusercontent.com/n8n-io/bash-dash/ma
 
 After installing Bash-Dash, you can test it and add your own custom commands.
 
+### Update command
+We are continuously improving the Bash-Dash. To update to the latest version, run:
+
+```
+- --update
+```
+
 ### Call commands
 
 To call a Bash-Dash command, type a dash `-` followed by the command you want. 
@@ -29,7 +36,6 @@ You can supply additional parameters by typing them after the command. For examp
 ```bash
 - weather berlin
 ```
-The output looks like this:
 
 ![Bash-Dash getting weather information from the terminal](https://i.imgur.com/1kzrNFl.png)
 
@@ -39,7 +45,6 @@ Bash-Dash comes with a pre-specified test command. You can try it out by running
 ```bash
 - test
 ```
-
 
 ### Custom commands
 
@@ -66,32 +71,6 @@ For example, to add the `test` command, type:
 commands[test]="URL:http://localhost:5678/webhook/test|METHOD:GET|TEST-URL:http://localhost:5678/webhook-test/test"
 ```
 
-
-### Update command
-We are continuously improving the Bash-Dash. To update to the latest version, run:
-
-```
-- --update
-```
-
-
-### Call a test Webhook
-
-You can call a test webhook by adding `--test` as the last parameter of a command. The command will then call the URL that was defined as `TEST-URL`. If a test webhook has not been defined, the command will replace `/webhook/` with `/webhook-test/` in the URL.
-
-
-## Examples
-There are many possible use-cases of Bash-Dash. To give you some ideas, here are some examples:
-
-- `sms wife Will be home late` to send a messge to your partner
-- `weather berlin` to return the current weather in Berlin
-- `serverStats production1` to return server statistics
-
-### Requests
-
-The requests that bash-dash makes are by default GET-requests. Optional call-commands
-that are supplied will be sent as query parameters. The server has at least 2 minutes to send a response, which is then printed in the terminal.
-
 ### Response formatting
 
 You can format how the response in the terminal gets displayed by using backslash escapes `\`.
@@ -105,9 +84,23 @@ The following text is \033[32mgreen\033[0m
 You can find the different codes for colors and formatting options (e.g., bold, underline) [here](https://misc.flogisoft.com/bash/tip_colors_and_formatting).
 
 
+### Call a test Webhook
+
+You can call a test webhook by adding `--test` as the last parameter of a command. The command will then call the URL that was defined as `TEST-URL`. If a test webhook has not been defined, the command will replace `/webhook/` with `/webhook-test/` in the URL.
+
+
+## Examples
+There are many possible use-cases of Bash-Dash. To give you some ideas, here are some examples:
+
+- `weather berlin` to return the current weather in Berlin. You can find the workflow [here](https://n8n.io/workflows/986).
+- `sms wife Will be home late` to send a messge to your partner
+- `serverStats production1` to return server statistics
+
 ## Backend
 
 You can use Bash-Dash with anything that can receive HTTP request calls.
+
+The requests that bash-dash makes are by default GET-requests. Optional call-commands that are supplied will be sent as query parameters. The server has at least 2 minutes to send a response, which is then printed in the terminal.
 
 ## License
 
