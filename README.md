@@ -10,8 +10,8 @@ To use Bash-Dash, you need to have [curl](https://curl.se/) installed. Then, ins
 mkdir ~/.bash-dash && curl https://raw.githubusercontent.com/n8n-io/bash-dash/main/bash-dash.sh -o ~/.bash-dash/bash-dash.sh && chmod 711 ~/.bash-dash/bash-dash.sh && curl https://raw.githubusercontent.com/n8n-io/bash-dash/main/commands.sh -o ~/.bash-dash/commands.sh && echo "alias -- -=~/.bash-dash/bash-dash.sh" >> ~/.bashrc
 ```
 
-Bash-Dash requires bash version 4+. Unfortunately does Mac OS ship with the outdated bash version 3 (last patch is from 2006). We **highly** recommend upgrading it anyway.
-[How to upgrade Bash on Mac OS](#Upgrade-Bash-on-Mac-OS)
+Bash-Dash requires bash version 4+. Unfortunately does MacOS ship with the outdated bash version 3 (last patch is from 2006). We **highly** recommend upgrading it anyway.
+[How to upgrade Bash on MacOS](#Upgrade-Bash-on-Mac-OS)
 
 ## Usage
 
@@ -108,11 +108,11 @@ You can use Bash-Dash with anything that can receive HTTP request calls.
 
 The requests that bash-dash makes are by default GET-requests. Optional call-commands that are supplied will be sent as query parameters. The server has at least 2 minutes to send a response, which is then printed in the terminal.
 
-## Upgrade Bash on Mac OS
+## Upgrade Bash on MacOS
 
-Unfortunately Mac OS doesn’t provide the latest bash version which may prevent you to take advantage of the latest features that came with bash 4 and 5. Also, running an outdated bash version probably exposes you to some major vulnerabilities.
+Unfortunately MacOS doesn’t provide the latest bash version which may prevent you to take advantage of the latest features that came with bash 4 and 5. Also, running an outdated bash version probably exposes you to some major vulnerabilities.
 
-Mac OS comes with Bash version 3 which is quite limiting and lack key features like the bash associative arrays, improved auto-completion, better Posix conformance, etc.
+MacOS comes with Bash version 3 which is quite limiting and lack key features like the bash associative arrays, improved auto-completion, better Posix conformance, etc.
 
 Follow these steps to upgrade:
 
