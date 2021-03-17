@@ -1,25 +1,25 @@
-# Bash-Dash (Beta)
+# bash-dash (Beta)
 
-(Slash) Dash commands are commands typed in the command line to run an action. Bash-Dash is a project created for [n8n.io](https://n8n.io) workflows, but you can use it with anything that can receive HTTP requests.
+(Slash) Dash commands are commands typed in the command line to run an action. bash-dash is a project created for [n8n.io](https://n8n.io) workflows, but you can use it with anything that can receive HTTP requests.
 
 ## Installation
 
-To use Bash-Dash, you need to have [curl](https://curl.se/) installed. Then, install Bash-Dash by running:
+To use bash-dash, you need to have [curl](https://curl.se/) installed. Then, install bash-dash by running:
 
 ```bash
 mkdir ~/.bash-dash && curl https://raw.githubusercontent.com/n8n-io/bash-dash/main/bash-dash.sh -o ~/.bash-dash/bash-dash.sh && chmod 711 ~/.bash-dash/bash-dash.sh && curl https://raw.githubusercontent.com/n8n-io/bash-dash/main/commands.sh -o ~/.bash-dash/commands.sh && echo "alias -- -=~/.bash-dash/bash-dash.sh" >> ~/.bashrc
 ```
 
-Bash-Dash requires bash version 4+. Unfortunately does MacOS ship with the outdated bash version 3 (last patch is from 2006). We **highly** recommend upgrading it anyway.
+bash-dash requires bash version 4+. Unfortunately does MacOS ship with the outdated bash version 3 (last patch is from 2006). We **highly** recommend upgrading it anyway.
 [How to upgrade Bash on MacOS](#Upgrade-Bash-on-Mac-OS)
 
 ## Usage
 
-After installing Bash-Dash, you can test it and add your own custom commands.
+After installing bash-dash, you can test it and add your own custom commands.
 
 ### Update command
 
-We are continuously improving the Bash-Dash. To update to the latest version, run:
+We are continuously improving the bash-dash. To update to the latest version, run:
 
 ```
 - --update
@@ -27,7 +27,7 @@ We are continuously improving the Bash-Dash. To update to the latest version, ru
 
 ### Call commands
 
-To call a Bash-Dash command, type a dash `-` followed by the command you want.
+To call a bash-dash command, type a dash `-` followed by the command you want.
 
 For example, a `weather` command is invoked like this:
 
@@ -41,7 +41,7 @@ You can supply additional parameters by typing them after the command. For examp
 - weather berlin
 ```
 
-Bash-Dash comes with a pre-specified test command. You can try it out by running:
+bash-dash comes with a pre-specified test command. You can try it out by running:
 
 ```bash
 - test
@@ -49,7 +49,7 @@ Bash-Dash comes with a pre-specified test command. You can try it out by running
 
 ### Custom commands
 
-You can create custom Bash-Dash commands for your personal use-cases. To do this, open the file `~/.bash-dash/commands.sh` and add a new line to the `commands` array. There are two possible formats in which you can add new commands, depending on how specific you need them to be: simple format and advanced format.
+You can create custom bash-dash commands for your personal use-cases. To do this, open the file `~/.bash-dash/commands.sh` and add a new line to the `commands` array. There are two possible formats in which you can add new commands, depending on how specific you need them to be: simple format and advanced format.
 
 #### Simple Format
 
@@ -83,9 +83,9 @@ For example, to display the word "green" in green color, type:
 The following text is \033[32mgreen\033[0m
 ```
 
-If you use Bash-Dash with n8n workflows, you can edit the displayed text in the Response node. For example, the bash-dah-weather workflow displays the output like this:
+If you use bash-dash with n8n workflows, you can edit the displayed text in the Response node. For example, the bash-dah-weather workflow displays the output like this:
 
-![Bash-Dash getting weather information from the terminal](https://i.imgur.com/1kzrNFl.png)
+![bash-dash getting weather information from the terminal](https://i.imgur.com/1kzrNFl.png)
 
 You can find the different codes for colors and formatting options (e.g., bold, underline) [here](https://misc.flogisoft.com/bash/tip_colors_and_formatting).
 
@@ -95,7 +95,7 @@ You can call a test webhook by adding `--test` as the last parameter of a comman
 
 ## Examples
 
-There are many possible use-cases of Bash-Dash. To give you some ideas, here are some examples of n8n workflows:
+There are many possible use-cases of bash-dash. To give you some ideas, here are some examples of n8n workflows:
 
 - `- weather berlin` to return the current weather in Berlin. You can find the workflow [here](https://n8n.io/workflows/986).
 - `- asana My new task` to create a new task in Asana. You can find the workflow [here](https://n8n.io/workflows/987).
@@ -104,7 +104,7 @@ There are many possible use-cases of Bash-Dash. To give you some ideas, here are
 
 ## Backend
 
-You can use Bash-Dash with anything that can receive HTTP request calls.
+You can use bash-dash with anything that can receive HTTP request calls.
 
 The requests that bash-dash makes are by default GET-requests. Optional call-commands that are supplied will be sent as query parameters. The server has at least 2 minutes to send a response, which is then printed in the terminal.
 
@@ -170,4 +170,4 @@ That's it! you can check which bash version you are running via: `$ bash --versi
 
 ## License
 
-Bash-Dash is [**Apache 2.0**](https://github.com/n8n-io/bash-dash/blob/main/LICENSE) licensed.
+bash-dash is [**Apache 2.0**](https://github.com/n8n-io/bash-dash/blob/main/LICENSE) licensed.
