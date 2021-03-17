@@ -25,7 +25,7 @@ then
 		curl --fail --silent --show-error --output ~/.bash-dash/bash-dash.sh https://raw.githubusercontent.com/n8n-io/bash-dash/main/bash-dash.sh
 	} || {
 		echo "Update did fail!"
-	exit 0
+		exit 1
 	}
 	echo "Success!"
 	exit 0
@@ -34,7 +34,7 @@ fi
 if [ -z "${commands[$command]}" ]
 then
 	echo "The command \"$command\" is not known!"
-	exit 0
+	exit 1
 fi
 
 method=GET
@@ -57,7 +57,7 @@ if [[ $data = *"|"* ]]; then
 
 	if [ -z "$url" ]; then
 		echo "There is no URL defined for command \"$command\"!"
-		exit 0
+		exit 1
 	fi
 else
 	# Command got defined via simple format
