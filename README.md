@@ -87,16 +87,15 @@ We are continuously improving the Bash-Dash. To update to the latest version, ru
 
 ### Call a test Webhook
 
-Calling a test webhook is possible by adding `--test` as the last parameter. It will then call the URL that was defined as `TEST-URL`. If a test webhook wasn't defined, it replaces `/webhook/` with `/webhook-test/` in the URL.
+You can call a test webhook by adding `--test` as the last parameter of a command. The command will then call the URL that was defined as `TEST-URL`. If a test webhook has not been defined, the command will replace `/webhook/` with `/webhook-test/` in the URL.
 
 
 ## Examples
+There are many possible use-cases of Bash-Dash. To give you some ideas, here are some examples:
 
-```bash
-- sms wife Will be home late
-- weather berlin
-- serverStats production1 
-```
+- `sms wife Will be home late` to send a messge to your partner
+- `weather berlin` to return the current weather in Berlin
+- `serverStats production1` to return server statistics
 
 ### Requests
 
