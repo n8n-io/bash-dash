@@ -10,8 +10,8 @@ To use bash-dash, you need to have [curl](https://curl.se/) installed. Then, ins
 mkdir ~/.bash-dash && curl https://raw.githubusercontent.com/n8n-io/bash-dash/main/bash-dash.sh -o ~/.bash-dash/bash-dash.sh && chmod 711 ~/.bash-dash/bash-dash.sh && curl https://raw.githubusercontent.com/n8n-io/bash-dash/main/commands.sh -o ~/.bash-dash/commands.sh && echo "alias -- -=~/.bash-dash/bash-dash.sh" >> ~/.bashrc
 ```
 
-bash-dash requires bash version 4+. Unfortunately does MacOS ship with the outdated bash version 3 (last patch is from 2006). We **highly** recommend upgrading it anyway.
-[How to upgrade Bash on MacOS](#Upgrade-Bash-on-Mac-OS)
+bash-dash requires bash version 4+. Unfortunately does MacOS ship with the outdated bash version 3 (last patch is from 2006). We **highly** recommend upgrading it.
+[How to upgrade Bash on MacOS](#Upgrade-Bash-on-MacOS)
 
 ## Usage
 
