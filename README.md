@@ -1,12 +1,12 @@
 # Bash-Dash (Beta)
 
-(Slash) Dash commands for the terminal. This was created for [n8n.io](https://n8n.io) but can be used with anything that can receive HTTP requests.
+(Slash) Dash commands for the terminal are commands that run a workflow . Bash-Dash is a project created for [n8n.io](https://n8n.io), . Though this Bash-Dash is created to be integrated with n8n workflows, you can use it with anything that can receive HTTP requests.
 
-## Install
+[[toc]]
 
-For Bash-Dash to work, [curl](https://curl.se/) has to be installed.
+## Installation
 
-To install, run:
+To use Bash-Dash, you need to have [curl](https://curl.se/) installed. Then, install Bash-Dash by running:
 
 ```bash
 mkdir ~/.bash-dash && curl https://raw.githubusercontent.com/n8n-io/bash-dash/main/bash-dash.sh -o ~/.bash-dash/bash-dash.sh && chmod 711 ~/.bash-dash/bash-dash.sh && curl https://raw.githubusercontent.com/n8n-io/bash-dash/main/commands.sh -o ~/.bash-dash/commands.sh && echo "alias -- -=~/.bash-dash/bash-dash.sh" >> ~/.bashrc
@@ -14,24 +14,35 @@ mkdir ~/.bash-dash && curl https://raw.githubusercontent.com/n8n-io/bash-dash/ma
 
 ## Usage
 
-### Call command
+Bash-Dash comes with several commands, but you can also add your own commands.
 
-A command can be called by a dash `-` followed by the command. For example, the `weather` command:
+### Call commands
+
+Call commands are commands that A command can be called by a dash `-` followed by the command. For example, the `weather` command is invoked like this:
 
 ```bash
 - weather
 ```
 
-Moreover, parameters can be supplied by adding them after the command. For example:
+Moreover, you can supply additional parameters by typing them after the command. For example, to get the weather in Berlin, run:
 
 ```bash
 - weather berlin
 ```
+The output looks like this:
 
 ![Bash-Dash getting weather information from the terminal](https://i.imgur.com/1kzrNFl.png)
-### Add commands
 
-You can add new commands by editing the file `~/.bash-dash/commands.sh` and adding a new line to the `commands` array.
+
+To update Bash-Dash, run:
+
+```
+- --update
+```
+
+### Custom commands
+
+You can add new custom commands for Bash-Dash. To do this, open the file `~/.bash-dash/commands.sh` and add a new line to the `commands` array. There are two ways to do 
 
 #### Simple Format
 
