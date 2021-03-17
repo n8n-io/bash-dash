@@ -93,6 +93,7 @@ You can call a test webhook by adding `--test` as the last parameter of a comman
 There are many possible use-cases of Bash-Dash. To give you some ideas, here are some examples:
 
 - `weather berlin` to return the current weather in Berlin. You can find the workflow [here](https://n8n.io/workflows/986).
+- `- asana My  new task` to create a new task in Asana. You can find the workflow [here](https://n8n.io/workflows/987)
 - `sms wife Will be home late` to send a messge to your partner
 - `serverStats production1` to return server statistics
 
