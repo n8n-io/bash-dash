@@ -37,9 +37,6 @@ You can supply additional parameters by typing them after the command. For examp
 - weather berlin
 ```
 
-![Bash-Dash getting weather information from the terminal](https://i.imgur.com/1kzrNFl.png)
-
-
 Bash-Dash comes with a pre-specified test command. You can try it out by running:
 
 ```bash
@@ -73,13 +70,17 @@ commands[test]="URL:http://localhost:5678/webhook/test|METHOD:GET|TEST-URL:http:
 
 ### Response formatting
 
-You can format how the response in the terminal gets displayed by using backslash escapes `\`.
+You can format how the response gets displayed in the terminal by using backslash escapes `\`.
 
 For example, to display the word "green" in green color, type:
 
 ```bash
 The following text is \033[32mgreen\033[0m
 ```
+
+If you use Bash-Dash with n8n workflows, you can edit the displayed text in the Response node. For example, the bash-dah-weather workflow displays the output like this: 
+
+![Bash-Dash getting weather information from the terminal](https://i.imgur.com/1kzrNFl.png)
 
 You can find the different codes for colors and formatting options (e.g., bold, underline) [here](https://misc.flogisoft.com/bash/tip_colors_and_formatting).
 
@@ -90,7 +91,7 @@ You can call a test webhook by adding `--test` as the last parameter of a comman
 
 
 ## Examples
-There are many possible use-cases of Bash-Dash. To give you some ideas, here are some examples:
+There are many possible use-cases of Bash-Dash. To give you some ideas, here are some examples of n8n workflows:
 
 - `- weather berlin` to return the current weather in Berlin. You can find the workflow [here](https://n8n.io/workflows/986).
 - `- asana My  new task` to create a new task in Asana. You can find the workflow [here](https://n8n.io/workflows/987).
