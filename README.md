@@ -1,8 +1,6 @@
 # Bash-Dash (Beta)
 
-(Slash) Dash commands for the terminal are commands that run a workflow . Bash-Dash is a project created for [n8n.io](https://n8n.io), . Though this Bash-Dash is created to be integrated with n8n workflows, you can use it with anything that can receive HTTP requests.
-
-[[toc]]
+(Slash) Dash commands are commands typed in the command line to run an action. Bash-Dash is a project created for [n8n.io](https://n8n.io) workflows, but you can use it with anything that can receive HTTP requests.
 
 ## Installation
 
@@ -36,7 +34,7 @@ The output looks like this:
 ![Bash-Dash getting weather information from the terminal](https://i.imgur.com/1kzrNFl.png)
 
 
-Bash-Dash comes only with a pre-specified test command. You can try it out by running:
+Bash-Dash comes with a pre-specified test command. You can try it out by running:
 
 ```bash
 - test
@@ -45,9 +43,7 @@ Bash-Dash comes only with a pre-specified test command. You can try it out by ru
 
 ### Custom commands
 
-You can create custom Bash-Dash commands for your personal use-cases. 
-To do this, open the file `~/.bash-dash/commands.sh` and add a new line to the `commands` array. 
-There are two possible formats in which you can add new commands, depending on how specific you need them to be: simple format and advanced format.
+You can create custom Bash-Dash commands for your personal use-cases. To do this, open the file `~/.bash-dash/commands.sh` and add a new line to the `commands` array.  There are two possible formats in which you can add new commands, depending on how specific you need them to be: simple format and advanced format.
 
 #### Simple Format
 
@@ -55,12 +51,6 @@ Add a new command by specifying the name of your custom command and the URL that
 
 ```bash
 commands[command_name]="YOUR_URL"
-```
-
-For example, to add the `weather` command, type:
-
-```bash
-commands[weather]="URL?"
 ```
 
 #### Advanced Format
@@ -100,26 +90,24 @@ There are many possible use-cases of Bash-Dash. To give you some ideas, here are
 ### Requests
 
 The requests that bash-dash makes are by default GET-requests. Optional call-commands
-that are supplied will be sent as query parameters.
-The server has min. 2 minutes to send a response which then gets printed in the terminal.
+that are supplied will be sent as query parameters. The server has at least 2 minutes to send a response, which is then printed in the terminal.
 
 ### Response formatting
 
-It is possible to use backslash escapes.
+You can format how the response in the terminal gets displayed by using backslash escapes `\`.
 
-The following example will display the word "green" in green color.
+For example, to display the word "green" in green color, type:
 
 ```bash
 The following text is \033[32mgreen\033[0m
 ```
 
-The different codes for colors, bold, underline, and so on can be found here:
-https://misc.flogisoft.com/bash/tip_colors_and_formatting
+You can find the different codes for colors and formatting options (e.g., bold, underline) [here](https://misc.flogisoft.com/bash/tip_colors_and_formatting).
 
 
 ## Backend
 
-Anything that can receive HTTP request calls can be used with bash-dash. 
+You can use Bash-Dash with anything that can receive HTTP request calls.
 
 ## License
 
