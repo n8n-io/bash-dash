@@ -83,7 +83,7 @@ For example, to display the word "green" in green color, type:
 The following text is \033[32mgreen\033[0m
 ```
 
-If you use bash-dash with n8n workflows, you can edit the displayed text in the Response node. For example, the bash-dash-weather workflow displays the output like this:
+If you use bash-dash with n8n workflows, you can edit the displayed text in the Response node. For example, could the bash-dash-weather workflow display the output like this:
 
 ![bash-dash getting weather information from the terminal](https://i.imgur.com/1kzrNFl.png)
 
