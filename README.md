@@ -83,7 +83,7 @@ For example, to display the word "green" in green color, type:
 The following text is \033[32mgreen\033[0m
 ```
 
-If you use bash-dash with n8n workflows, you can edit the displayed text in the Response node. For example, the bash-dah-weather workflow displays the output like this:
+If you use bash-dash with n8n workflows, you can edit the displayed text in the Response node. For example, the bash-dash-weather workflow displays the output like this:
 
 ![bash-dash getting weather information from the terminal](https://i.imgur.com/1kzrNFl.png)
 
@@ -101,6 +101,8 @@ There are many possible use-cases of bash-dash. To give you some ideas, here are
 - `- asana My new task` to create a new task in Asana. You can find the workflow [here](https://n8n.io/workflows/987).
 - `- sms wife Will be home late` to send a messge to your partner
 - `- serverStats production1` to return server statistics
+- `- spotify next` to skip to the next song on Spotify
+- `- light` to toggle your IoT light
 
 ## Backend
 
